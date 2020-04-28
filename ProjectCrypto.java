@@ -12,7 +12,8 @@ public class ProjectCrypto {
     }
     public static String normalizeText(String s) {
         // A method that will force all text to become capitalized and remove all spaces and punctuation from it.
-        String s2 = s.toUpperCase().replace(".","").replace(" ","").replace(",","").replace(":","").replace(";","").replace("'","").replace("\"","").replace(")","").replace("(","").replace("!","").replace("?","");
+        String s2 = s.toUpperCase().replace(".","").replace(" ","").replace(",","").replace(":","").replace(";","").replace
+            ("'","").replace("\"","").replace(")","").replace("(","").replace("!","").replace("?","");
 
         return s2;
 
@@ -24,8 +25,8 @@ public class ProjectCrypto {
         for (int i = 0; i < length; i++) {
             char ch = addOB.charAt(i); // makes a new char ch that is equal to the char at i in the string addOB.
             if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U' || ch == 'Y') {
-                oBified += "OB" + ch; //if the char at i in addOB is A, E, I, O, U or Y, it will updated string oBified to current oBified + "OB" + ch.
-            } else {
+                oBified += "OB" + ch; //if the char at i in addOB is A, E, I, O, U or Y, it will updated string oBified to 
+            } else {                  //current oBified + "OB" + ch.
                 oBified += ch;
             }
             }
@@ -52,8 +53,10 @@ public class ProjectCrypto {
 
     }
     public static String groupify(String b, int nLetters) {
-        //A method that will separate a passed String into groups of letters based on the passed integer. Example: "ABCDEF", 2 would output "AB CD EF".
-        //If the last group of letters doesn't have enough to make a full group, it will add 'x''s to the group to complete it. "ABCDEF", 4 = "ABCD EFxx".
+        //A method that will separate a passed String into groups of letters based on the passed integer. Example: "ABCDEF", 2 
+        //would output "AB CD EF".
+        //If the last group of letters doesn't have enough to make a full group, it will add 'x''s to the group to complete it. 
+        //"ABCDEF", 4 = "ABCD EFxx".
         String groupedText = "";
         int length = b.length();
         for (int i = 0; i < length; i++) {
@@ -72,7 +75,8 @@ public class ProjectCrypto {
 
     }
     public static String encryptString(String encrypt, int shiftValue, int groupSize) {
-        //This method will put everything together and call the methods needed in the proper order. It will output the encrypted text.
+        //This method will put everything together and call the methods needed in the proper order. It will output the encrypted
+        //text.
         String cypherText = normalizeText(encrypt);
         String cypherText2 = obify(cypherText);
         String cypherText3 = caesarify(cypherText2, shiftValue);
